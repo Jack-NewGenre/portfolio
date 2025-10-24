@@ -8,7 +8,7 @@ export default function Home() {
         <LiquidBG />
       </div>
       <div className="relative z-10">
-        <h1 className="text-4xl font-bold text-center">Jack's Portfolio</h1>
+        <h1 className="text-4xl font-bold text-center">Jack's Portfolio v2</h1>
         <p className="text-center max-w-md">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean facilisis felis a orci faucibus tempor. Morbi tellus ante, lacinia id arcu ac, accumsan ultricies quam.
         </p>
