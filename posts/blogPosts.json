@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "title": "My First Blog Post",
+    "slug": "my-first-blog-post",
+    "excerpt": "This is my very first post on my Next.js blog!",
+    "content": "Welcome to my blog built with Next.js. This is my first post!",
+    "date": "2025-10-20"
+  },
+  {
+    "id": 2,
+    "title": "Learning Next.js",
+    "slug": "learning-nextjs",
+    "excerpt": "Sharing what I learned while building with Next.js.",
+    "content": "Next.js makes it easy to build React apps with server rendering and APIs.",
+    "date": "2025-10-21"
+  }
+]
