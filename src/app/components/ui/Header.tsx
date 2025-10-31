@@ -8,6 +8,7 @@ const Header = () => {
                 <li><Link href="/" className="opacity-50 transition-all duration-300 hover:opacity-100">Home</Link></li>
                 <li><Link href="/about" className="opacity-50 transition-all duration-300 hover:opacity-100">About</Link></li>
                 <li><Link href="/blog" className="opacity-50 transition-all duration-300 hover:opacity-100">Blog</Link></li>
+                <li><Link href="/contact" className="opacity-50 transition-all duration-300 hover:opacity-100">Contact</Link></li>
                 <li><ModeToggle /></li>
             </ul>
         </header>
