@@ -1,6 +1,8 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -41,14 +43,6 @@
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
-}
-
-.blogContent h1 {
-  font-size: 2rem;
-}
-.blogContent ul {
-  margin: 0 0 0 20px;
-  list-style-type: disc;
 }
 
 :root {
@@ -127,4 +121,12 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.blogContent h1 {
+  font-size: 2rem;
+}
+.blogContent ul {
+  margin: 0 0 0 20px;
+  list-style-type: disc;
 }
