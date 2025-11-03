@@ -1,4 +1,3 @@
-import Image from "next/image";
 import LiquidBG from "./components/ui/LiquidBG";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
