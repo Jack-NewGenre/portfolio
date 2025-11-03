@@ -3,15 +3,10 @@ import bookmarkPlugin from "@notion-render/bookmark-plugin";
 import { NotionRenderer } from "@notion-render/client";
 import hljsPlugin from "@notion-render/hljs-plugin";
 
-interface PageProps {
-  params: {
-    slug: string;
-  };
-}
+const SinglePostPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
+  const { slug } = await params;
 
-const SinglePostPage = async ({ params }: PageProps) => {
-
-  const post = await fetchBySlug(params.slug);
+  const post = await fetchBySlug(slug);
 
   if (!post) {
     return <div className="pt-16">Post not found</div>;
@@ -30,7 +25,7 @@ const SinglePostPage = async ({ params }: PageProps) => {
 
   return (
     <div className="pt-16">
-      <div className="blogContent" dangerouslySetInnerHTML={{ __html: html }}></div>
+      <div className="blogContent" dangerouslySetInnerHTML={{ __html: html }} />
     </div>
   );
 };
