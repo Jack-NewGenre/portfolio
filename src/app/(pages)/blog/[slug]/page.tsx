@@ -3,7 +3,14 @@ import bookmarkPlugin from "@notion-render/bookmark-plugin";
 import { NotionRenderer } from "@notion-render/client";
 import hljsPlugin from "@notion-render/hljs-plugin";
 
-const SinglePostPage = async ({ params }: { params: {slug: string}}) => {
+interface PageProps {
+  params: {
+    slug: string;
+  };
+}
+
+const SinglePostPage = async ({ params }: PageProps) => {
+
   const post = await fetchBySlug(params.slug);
 
   if (!post) {
