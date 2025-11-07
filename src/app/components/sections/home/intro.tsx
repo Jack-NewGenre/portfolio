@@ -7,7 +7,7 @@ const IntroSection = () => {
                 <div className="w-2/5">
                     <p className="text-lg sticky top-20 uppercase font-mono">About Me</p>
                 </div>
-                <div className="w-3/5">
+                <div className="w-3/5 flex flex-col gap-10">
                     <ScrollReveal baseOpacity={0.1} enableBlur={true} baseRotation={0} blurStrength={0} wordAnimationEnd="center center">
                         Hey! I’m Jack, front-end developer focused on creating clean, engaging digital experiences. I love turning ideas into polished interfaces that feel intuitive and visually refined.
                     </ScrollReveal>

@@ -3,6 +3,7 @@ import { DM_Sans, DM_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/ui/Header";
 import { ThemeProvider } from "./components/ThemeProvider";
+import Footer from "./components/ui/Footer";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -36,6 +37,7 @@ export default function RootLayout({
           <main>
             {children}
           </main>
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
