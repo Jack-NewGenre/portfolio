@@ -121,6 +121,19 @@
   }
 }
 
+@theme {
+  --translate-101: 101%;
+
+  @keyframes marquee {
+    from { transform: translateX(0%); }
+    to   { transform: translateX(-50%); }
+  }
+
+  --animate-marquee: marquee 15s linear infinite;
+}
+
+@tailwind utilities;
+
 ::selection {
 	background: #00b8db;
   color: var(--background)
