@@ -3,7 +3,7 @@ import CircularText from "./CircleText";
 
 const Footer = () => {
     return (
-        <footer className="w-full min-h-screen bg-background p-8 flex flex-col gap-20 justify-between">
+        <footer className="w-full min-h-screen bg-background p-8 flex flex-col gap-20 justify-between overflow-hidden">
             <div className="flex justify-end">
                 <CircularText
                     text="JACK*NEW*GENRE*"

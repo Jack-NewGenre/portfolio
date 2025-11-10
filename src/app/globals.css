@@ -139,10 +139,123 @@
   color: var(--background)
 }
 
-.blogContent h1 {
-  font-size: 2rem;
+.blogContent {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--foreground); /* dark text */
+  word-break: break-word;
 }
+
+/* Headings */
+.blogContent h1,
+.blogContent h2,
+.blogContent h3,
+.blogContent h4,
+.blogContent h5,
+.blogContent h6 {
+  font-weight: 700;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  line-height: 1.3;
+}
+
+.blogContent h1 {
+  font-size: 2.25rem;
+}
+
+.blogContent h2 {
+  font-size: 1.875rem;
+}
+
+.blogContent h3 {
+  font-size: 1.5rem;
+}
+
+.blogContent h4 {
+  font-size: 1.25rem;
+}
+
+/* Paragraphs */
+.blogContent p {
+  margin-bottom: 1em;
+}
+
+/* Links */
+.blogContent a {
+  color: #2563eb; /* blue link */
+  text-decoration: underline;
+}
+.blogContent a:hover {
+  text-decoration: none;
+  color: #1d4ed8;
+}
+
+/* Lists */
+.blogContent ul,
+.blogContent ol {
+  margin: 1em 0;
+  padding-left: 1.5em;
+}
+
 .blogContent ul {
-  margin: 0 0 0 20px;
   list-style-type: disc;
 }
+
+.blogContent li {
+  margin-bottom: 0.5em;
+}
+
+/* Tables */
+.blogContent table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1em 0;
+  font-size: 0.95rem;
+}
+
+.blogContent th,
+.blogContent td {
+  border: 1px solid var(--muted);
+  padding: 0.5em 0.75em;
+  text-align: left;
+}
+
+.blogContent th {
+  background-color: var(--muted);
+  font-weight: 600;
+}
+
+/* Pre/code blocks */
+.blogContent pre {
+  background-color: var(--muted);
+  padding: 1em;
+  border-radius: 0.5rem;
+  overflow-x: auto;
+  margin: 1em 0;
+}
+
+.blogContent code {
+  font-family: "Fira Code", monospace;
+  font-size: 0.875rem;
+  padding: 0.2em 0;
+  border-radius: 0.25rem;
+}
+
+/* Blockquotes */
+.blogContent blockquote {
+  border-left: 4px solid var(--muted);
+  padding-left: 1em;
+  color: var(--muted-foreground);
+  margin: 1em 0;
+  font-style: italic;
+}
+
+/* Images */
+.blogContent img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  margin: 1em 0;
+}
+
