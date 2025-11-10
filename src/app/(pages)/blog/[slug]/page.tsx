@@ -12,6 +12,34 @@ const SinglePostPage = async ({ params }: { params: Promise<{ slug: string }> })
     return <div className="pt-16">Post not found</div>;
   }
 
+  // Extract title, date and thumbnail
+  const title =
+    post.properties.Title.type === "title"
+      ? post.properties.Title.title[0]?.plain_text ?? ""
+      : "";
+
+  const dateProperty = post.properties.Date;
+  const date =
+    dateProperty?.type === "created_time"
+      ? dateProperty.created_time
+      : "";
+  const formattedDate = date
+    ? new Date(date).toLocaleDateString("en-GB", {
+        year: "numeric",
+        month: "short",
+        day: "numeric",
+      })
+    : "";
+
+  const thumbnailProperty = post.properties.Thumbnail;
+  let thumbnail = "";
+  if (thumbnailProperty?.type === "files" && thumbnailProperty.files.length > 0) {
+    const fileObj = thumbnailProperty.files[0];
+    if (fileObj.type === "external") thumbnail = fileObj.external.url;
+    if (fileObj.type === "file") thumbnail = fileObj.file.url;
+  }
+
+  // Fetch page blocks
   const blocks = await fetchPageBlocks(post.id);
 
   const renderer = new NotionRenderer({
@@ -24,8 +52,24 @@ const SinglePostPage = async ({ params }: { params: Promise<{ slug: string }> })
   const html = await renderer.render(...blocks);
 
   return (
-    <div className="pt-16">
-      <div className="blogContent" dangerouslySetInnerHTML={{ __html: html }} />
+    <div className="pt-40 px-4 pb-16 bg-background w-full mx-auto">
+      <div className="w-full max-w-4xl mx-auto flex flex-col gap-6">
+        {/* Thumbnail */}
+        {thumbnail && (
+          <img
+            src={thumbnail}
+            alt={`${title} thumbnail`}
+            className="w-full max-h-96 object-cover"
+          />
+        )}
+
+        {/* Title & Date */}
+        <h1 className="text-4xl font-bold">{title}</h1>
+        {formattedDate && <p className="text-sm opacity-60">{formattedDate}</p>}
+
+        {/* Notion content */}
+        <div className="blogContent" dangerouslySetInnerHTML={{ __html: html }} />
+      </div>
     </div>
   );
 };
