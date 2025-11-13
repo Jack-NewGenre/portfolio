@@ -82,7 +82,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image, date, service })
         
       </React.Fragment>
     ));
-  }, [text, image]);
+  }, [text, image, date, service]);
 
   return (
     <div className="flex-1 relative overflow-hidden text-center shadow-[0_-1px_0_0] shadow-foreground" ref={itemRef}>
