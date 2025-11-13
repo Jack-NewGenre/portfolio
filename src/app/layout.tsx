@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${dmSans.variable} ${dmMono.variable} antialiased bg-core`}
+        className={`${dmSans.variable} ${dmMono.variable} antialiased bg-orange-600`}
       >
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Header />
