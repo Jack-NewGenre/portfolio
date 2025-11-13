@@ -2,6 +2,7 @@ import { fetchBySlug, fetchPageBlocks, notion } from "@/lib/notion";
 import bookmarkPlugin from "@notion-render/bookmark-plugin";
 import { NotionRenderer } from "@notion-render/client";
 import hljsPlugin from "@notion-render/hljs-plugin";
+import Image from "next/image";
 
 const SinglePostPage = async ({ params }: { params: Promise<{ slug: string }> }) => {
   const { slug } = await params;
@@ -56,11 +57,7 @@ const SinglePostPage = async ({ params }: { params: Promise<{ slug: string }> })
       <div className="w-full max-w-4xl mx-auto flex flex-col gap-6">
         {/* Thumbnail */}
         {thumbnail && (
-          <img
-            src={thumbnail}
-            alt={`${title} thumbnail`}
-            className="w-full max-h-96 object-cover"
-          />
+          <Image src={thumbnail} alt={`${title} thumbnail`} width={1200} height={500} className="w-full max-h-96 object-cover" />
         )}
 
         {/* Title & Date */}

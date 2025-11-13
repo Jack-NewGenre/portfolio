@@ -5,6 +5,7 @@ import type {
   PageObjectResponse,
 } from "@notionhq/client/build/src/api-endpoints";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 
 const BlogPage = async () => {
   const posts: QueryDatabaseResponse = await fetchPages();
@@ -78,11 +79,7 @@ const BlogPage = async () => {
                     className="text-base w-full flex justify-between"
                   >
                     {thumbnail && (
-                      <img
-                        src={thumbnail}
-                        alt={title}
-                        className="w-1/3 h-auto object-cover"
-                      />
+                      <Image src={thumbnail} alt={`${title} thumbnail`} width={300} height={300} className="w-1/3 h-auto object-cover" />
                     )}
                     <div className="flex flex-col gap-2 w-2/3 py-4 px-8">
                       {tags.length > 0 && (
