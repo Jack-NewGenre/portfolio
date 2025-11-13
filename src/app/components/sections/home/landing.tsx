@@ -18,10 +18,9 @@ const LandingSectionNew = () => {
                     variant={1}
                 />
             </div>
-            <div className="text-foreground text-center cursor-default z-2 pointer-events-none">
-                <h1 className="text-[13vw] leading-none uppercase font-black">Jack Cox</h1>
-                <p className="text-3xl uppercase font-mono">Full-Stack Developer</p>
-                <p className="text-sm">( In-training )</p>
+            <div className="text-foreground text-center cursor-default z-2 pointer-events-none flex flex-col gap-2">
+                <h1 className="text-[12vw] leading-none uppercase font-medium">Jack Cox</h1>
+                <p className="text-1xl font-mono">Full-Stack Developer based in London, UK</p>
             </div>
         </div>
      );
