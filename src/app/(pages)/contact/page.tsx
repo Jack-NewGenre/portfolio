@@ -1,16 +1,42 @@
-import LiquidBG from "@/app/components/ui/LiquidBG";
+import Image from "next/image";
+import Link from "next/link";
 
 const ContactPage = () => {
     return ( 
-        <div className="font-sans flex flex-col items-center justify-center min-h-screen p-8 gap-2">
-            <div className="absolute inset-0 overflow-hidden">
-                <LiquidBG />
-            </div>
-            <div className="relative z-10">
-                <h1 className="text-4xl font-bold text-center">Contact Me</h1>
-                <p className="text-center max-w-md">
-                    Feel free to reach out to me via email at <br /><a href="mailto:jack.cox@newgenre.studio" className="text-blue-500">jack.cox@newgenre.studio</a>
-                </p>
+        <div className="pt-40 px-8 pb-16 bg-background w-full">
+            <div className="flex justify-between">
+                <div className="w-2/3">
+                    <h2 className="text-6xl mb-12 uppercase">Contact Me</h2>
+                    <div className="flex gap-20">
+                        <div className="w-1/2">
+                            <p className="text-base text-foreground">Let&#39;s create something meaningful together.<br /> I&#39;d love to hear about your project, big or small.</p>
+                        </div>
+                        <div className="w-1/2 flex flex-col gap-8">
+                            <div>
+                                <p className="text-sm text-foreground/60 uppercase">Email &amp; Phone</p>
+                                <ul>
+                                    <li><Link href={"mailto:coxy@newgenre.studio"} target="_blank" className="text-sm text-foreground uppercase hover:line-through">coxy@newgenre.studio</Link></li>
+                                    <li><Link href={"tel:+1234567890"} target="_blank" className="text-sm text-foreground uppercase hover:line-through">+1234567890</Link></li>
+                                </ul>
+                            </div>
+                            <div>
+                                <p className="text-sm text-foreground/60 uppercase">Socials</p>
+                                <ul>
+                                    <li><Link href={"#"} target="_blank" className="text-sm text-foreground uppercase hover:line-through">Instagram</Link></li>
+                                    <li><Link href={"#"} target="_blank" className="text-sm text-foreground uppercase hover:line-through">LinkedIn</Link></li>
+                                    <li><Link href={"#"} target="_blank" className="text-sm text-foreground uppercase hover:line-through">X (Twitter)</Link></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="w-1/3 flex justify-end relative">
+                    <Image className="w-full h-full object-cover" src="https://images.unsplash.com/photo-1536256263959-770b48d82b0a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=987" alt="Jack Cox profile" width={500} height={700} />
+                    <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center pointer-events-none">
+                        <Image className="w-75 h-75" src="/smile.webp" alt="Smile Animation" width={200} height={200} />
+                    </div>
+                    
+                </div>
             </div>
         </div>
     );
