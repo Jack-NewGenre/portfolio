@@ -9,7 +9,7 @@ const ContactPage = () => {
                     <h2 className="text-6xl mb-12 uppercase">Contact Me</h2>
                     <div className="flex gap-20">
                         <div className="w-1/2">
-                            <p className="text-base text-foreground">Let's create something meaningful together.<br /> I'd love to hear about your project, big or small.</p>
+                            <p className="text-base text-foreground">Let&#39;s create something meaningful together.<br /> I&#39;d love to hear about your project, big or small.</p>
                         </div>
                         <div className="w-1/2 flex flex-col gap-8">
                             <div>
