@@ -1,3 +1,5 @@
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -10,6 +12,9 @@ const ContactPage = () => {
                     <div className="flex gap-20">
                         <div className="w-1/2">
                             <p className="text-base text-foreground">Let&#39;s create something meaningful together.<br /> I&#39;d love to hear about your project, big or small.</p>
+                            <Button className="mt-8" variant="default" size="default" asChild>
+                                <Link href={"mailto:coxy@newgenre.studio"} className="group">Get in Touch <ArrowRight className="rotate-0 group-hover:-rotate-45 transition-all duration-300" /></Link>
+                            </Button>
                         </div>
                         <div className="w-1/2 flex flex-col gap-8">
                             <div>
