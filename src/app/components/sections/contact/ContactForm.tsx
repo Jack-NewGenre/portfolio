@@ -22,9 +22,9 @@ import {
 import { Button } from "@/components/ui/button"
 
 const formSchema = z.object({
-  title: z.string().min(5).max(32),
-  email: z.string().min(5).max(100).email(),
-  description: z.string().min(20).max(100),
+  title: z.string().min(1).max(32),
+  email: z.string().min(1).max(100).email(),
+  description: z.string().min(1).max(100),
 })
 
 const ContactForm = () => {
@@ -39,7 +39,7 @@ const ContactForm = () => {
   })
 
   const onSubmit = (data: z.infer<typeof formSchema>) => {
-    console.log("submitted:", data)
+    console.log("submitted:", data), form.reset()
   }
 
   return ( 
