@@ -22,9 +22,9 @@ import {
 import { Button } from "@/components/ui/button"
 
 const formSchema = z.object({
-  title: z.string().min(1).max(32),
-  email: z.string().min(1).max(100).email(),
-  description: z.string().min(1).max(100),
+  title: z.string({message: "Title is required"}).min(1, {message: "Title is too short"}).max(50, {message: "Title is too long"}),
+  email: z.email({message: "Invalid email address"}),
+  description: z.string({message: "Description is required"}).max(500, {message: "Description is too long"}),
 })
 
 const ContactForm = () => {
