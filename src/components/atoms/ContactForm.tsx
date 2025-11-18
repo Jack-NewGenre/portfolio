@@ -20,9 +20,10 @@ import {
   InputGroupTextarea,
 } from "@/components/ui/input-group"
 import { Button } from "@/components/ui/button"
+import { useState } from "react"
 
 const formSchema = z.object({
-  title: z.string({message: "Title is required"}).min(1, {message: "Title is too short"}).max(50, {message: "Title is too long"}),
+  fullname: z.string({message: "Full name is required"}).min(1, {message: "Full name is too short"}).max(50, {message: "Full name is too long"}),
   email: z.email({message: "Invalid email address"}),
   description: z.string({message: "Description is required"}).max(500, {message: "Description is too long"}),
 })
@@ -32,30 +33,55 @@ const ContactForm = () => {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      title: "",
+      fullname: "",
       email: "",
       description: "",
     },
   })
 
-  const onSubmit = (data: z.infer<typeof formSchema>) => {
-    console.log("submitted:", data), form.reset()
+  //const onSubmit = (data: z.infer<typeof formSchema>) => {
+    //console.log("submitted:", data), form.reset()
+  //}
+
+const [isSubmitting, setIsSubmitting] = useState(false)
+  async function onSubmit(data: z.infer<typeof formSchema>) {
+    setIsSubmitting(true)
+    try {
+      const response = await fetch("https://webhook.site/fdd6d4a2-da62-401f-9db6-948c914e71d4", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      })
+      if (!response.ok) {
+        throw new Error("Failed to submit form")
+      }
+    console.log("Form submitted successfully!")
+    form.reset() // Clear the form
+  } catch (error) {
+  console.error("Error submitting form:", error)
+  // In production, show user-friendly error message
+      } finally {
+    setIsSubmitting(false)
   }
+}
 
   return ( 
     <div>
-          <form id="form-rhf-demo" onSubmit={form.handleSubmit(onSubmit)}>
+          <form id="enquiry-form" onSubmit={form.handleSubmit(onSubmit)}>
             <FieldGroup>
 
-              {/* TITLE */}
+              {/* fullname */}
               <Controller
-                name="title"
+                name="fullname"
                 control={form.control}
                 render={({ field, fieldState }) => (
                   <Field data-invalid={fieldState.invalid}>
-                    <FieldLabel>Name</FieldLabel>
+                    <FieldLabel>Full name</FieldLabel>
 
                     <Input
+                      type="text"
                       {...field}
                       placeholder="Enter your name"
                     />
@@ -77,6 +103,7 @@ const ContactForm = () => {
                     <Input
                       {...field}
                       placeholder="Enter your email address"
+                      type="email"
                     />
 
                     {fieldState.error && (
@@ -121,7 +148,7 @@ const ContactForm = () => {
                 <Button type="button" variant="outline" onClick={() => form.reset()}>
                     Reset
                 </Button>
-                <Button type="submit" form="form-rhf-demo">
+                <Button type="submit" form="enquiry-form">
                     Submit
                 </Button>
             </Field>
