@@ -1,4 +1,4 @@
-import ImageTrail from "../../ui/ImageTrail";
+import ImageTrail from "@/components/molecules/ImageTrail";
 
 const LandingSectionNew = () => {
     return ( 

@@ -1,4 +1,4 @@
-import FlowingMenu from "../../ui/FlowingProjects";
+import FlowingMenu from "@/components/molecules/FlowingProjects";
 
 const projects = [
   { link: 'https://newgenre.studio/', text: 'New Genre', image: '/new-genre-case.jpg', date: '2025', service: 'Web Development' },

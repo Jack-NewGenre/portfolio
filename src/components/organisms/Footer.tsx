@@ -1,5 +1,5 @@
 import Link from "next/link";
-import CircularText from "./CircleText";
+import CircularText from "../atoms/CircleText";
 
 const Footer = () => {
     return (
