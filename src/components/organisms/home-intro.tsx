@@ -1,4 +1,5 @@
-import ScrollReveal from "../../ui/TextReveal";
+import ScrollReveal from "@/components/molecules/TextReveal";
+
 
 const IntroSection = () => {
     return ( 

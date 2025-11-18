@@ -1,9 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { ModeToggle } from "./ModeToggle";
+import { ModeToggle } from "../atoms/ModeToggle";
 import { useState } from "react";
-import { Clock } from "./Clock";
+import { Clock } from "../atoms/Clock";
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);

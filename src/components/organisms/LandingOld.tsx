@@ -1,4 +1,4 @@
-import LiquidBG from "@/app/components/ui/LiquidBG";
+import LiquidBG from "@/components/molecules/LiquidBG";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 

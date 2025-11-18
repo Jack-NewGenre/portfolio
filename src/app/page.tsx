@@ -1,6 +1,6 @@
-import IntroSection from "./components/sections/home/intro";
-import LandingSectionNew from "./components/sections/home/landing";
-import Projects from "./components/sections/home/Projects";
+import IntroSection from "@/components/organisms/home-intro";
+import Projects from "@/components/organisms/home-projects";
+import LandingSectionNew from "@/components/organisms/home-landing";
 
 export default function Home() {
   return (

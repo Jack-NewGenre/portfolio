@@ -21,7 +21,6 @@ const BlogPage = async () => {
                 post.object === "page" && "properties" in post
             )
             .map((post) => {
-              // TypeScript now knows post is a PageObjectResponse ✅
               const slug =
                 post.properties.Slug.type === "rich_text"
                   ? post.properties.Slug.rich_text[0]?.plain_text ?? ""
