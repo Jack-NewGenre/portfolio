@@ -1,4 +1,6 @@
 import EnquiryPopup from "@/components/molecules/EnquiryPopup";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -11,7 +13,12 @@ const ContactPage = () => {
                     <div className="flex gap-20">
                         <div className="w-1/2">
                             <p className="text-base text-foreground">Let&#39;s create something meaningful together.<br /> I&#39;d love to hear about your project, big or small.</p>
-                            <EnquiryPopup />
+                            <EnquiryPopup trigger={
+                                <Button className="mt-8 group" variant="default" size="default">
+                                    Start a project <ArrowRight className="rotate-0 group-hover:-rotate-45 transition-all duration-300" />
+                                </Button>
+                            }
+                            />
                         </div>
                         <div className="w-1/2 flex flex-col gap-8">
                             <div>
