@@ -68,15 +68,15 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image, date, service })
 
         <div className='flex justify-between items-center w-[90vw] px-1'>
             <div className="flex items-center gap-4">
-                <span className="text-base text-background font-mono">/ {date}</span>
-                <h4 className='text-6xl uppercase text-background'>{text}</h4>
+                <span className="text-sm text-background font-mono md:text-base">/ {date}</span>
+                <h4 className='text-xl uppercase text-background sm:text-4xl md:text-6xl'>{text}</h4>
             </div>
             <div
-            className="w-60 h-30 bg-cover bg-center"
+            className="w-60 h-30 bg-cover bg-center hidden md:block"
             style={{ backgroundImage: `url(${image})` }}
             />
-            <div className=''>
-                <span className="text-base text-background font-mono">{service}</span>
+            <div className='flex items-center'>
+                <span className="text-sm text-background font-mono text-right md:text-base">{service}</span>
             </div>
         </div>
         
@@ -87,17 +87,17 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image, date, service })
   return (
     <div className="flex-1 relative overflow-hidden text-center shadow-[0_-1px_0_0] shadow-foreground" ref={itemRef}>
       <a
-        className="flex items-center justify-between h-full py-16 px-4 relative cursor-pointer no-underline text-foreground text-5xl hover:text-background focus:text-foreground focus-visible:text-background"
+        className="flex items-center justify-between h-full py-12 md:py-16 px-4 relative cursor-pointer no-underline text-foreground text-5xl hover:text-background focus:text-foreground focus-visible:text-background"
         href={link}
         onMouseEnter={handleMouseEnter}
         onMouseLeave={handleMouseLeave}
       >
         <div className="flex items-center gap-4">
-            <span className="text-base font-mono">/ {date}</span>
-            <h4 className='text-6xl uppercase'>{text}</h4>
+            <span className="text-sm font-mono md:text-base">/ {date}</span>
+            <h4 className='text-xl uppercase sm:text-4xl md:text-6xl'>{text}</h4>
         </div>
-        <div className=''>
-            <span className="text-base font-mono">{service}</span>
+        <div className='flex items-center'>
+            <span className="text-sm font-mono text-right md:text-base">{service}</span>
         </div>
       </a>
       <div

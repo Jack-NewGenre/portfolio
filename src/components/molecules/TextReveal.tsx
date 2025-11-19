@@ -112,7 +112,7 @@ const ScrollReveal: React.FC<ScrollRevealProps> = ({
 
   return (
     <h2 ref={containerRef} className={`${containerClassName}`}>
-      <p className={`text-5xl ${textClassName}`}>{splitText}</p>
+      <p className={`text-3xl md:text-5xl ${textClassName}`}>{splitText}</p>
     </h2>
   );
 };

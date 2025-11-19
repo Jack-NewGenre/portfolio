@@ -53,7 +53,7 @@ const SinglePostPage = async ({ params }: { params: Promise<{ slug: string }> })
   const html = await renderer.render(...blocks);
 
   return (
-    <div className="pt-40 px-4 pb-16 bg-background w-full mx-auto">
+    <div className="pt-40 px-4 md:px-8 pb-16 bg-background w-full mx-auto">
       <div className="w-full max-w-4xl mx-auto flex flex-col gap-6">
         {/* Thumbnail */}
         {thumbnail && (

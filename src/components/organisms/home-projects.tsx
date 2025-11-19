@@ -9,7 +9,7 @@ const projects = [
 
 const Projects = () => {
     return ( 
-        <section className="relative px-8 py-32 bg-background">
+        <section className="relative px-4 md:px-8 py-32 bg-background">
             <FlowingMenu items={projects} />
         </section>
      );

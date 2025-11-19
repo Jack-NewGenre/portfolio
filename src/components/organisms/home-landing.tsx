@@ -2,7 +2,7 @@ import ImageTrail from "@/components/molecules/ImageTrail";
 
 const LandingSectionNew = () => {
     return ( 
-        <div className="relative h-screen flex justify-center items-center bg-background">
+        <div className="relative h-screen flex justify-center items-center bg-background overflow-hidden">
             <div className="absolute inset-0 z-1">
                 <ImageTrail
                     items={[
