@@ -4,6 +4,7 @@ import Link from "next/link";
 import { ModeToggle } from "../atoms/ModeToggle";
 import { useState } from "react";
 import { Clock } from "../atoms/Clock";
+import WeatherComponent from "../atoms/weather";
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -14,8 +15,9 @@ const Header = () => {
                 <Link href="/">Jack© <span className="text-foreground/40 font-normal">Full-Stack Developer</span></Link>
             </div>
 
-            <div className="flex items-center flex-auto hidden sm:flex">
+            <div className="items-center gap-2 flex-auto hidden sm:flex">
                 <Clock />
+                <WeatherComponent />
             </div>
             
             <div className="flex items-center justify-end flex-auto gap-6 w-20">
