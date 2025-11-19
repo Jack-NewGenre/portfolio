@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/dialog"
 import ContactForm from "@/components/atoms/ContactForm";
 import { ReactNode, useState } from "react";
+import { ScrollArea } from "@radix-ui/react-scroll-area";
 
 const EnquiryPopup = ({trigger}: {trigger:ReactNode}) => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -27,7 +28,11 @@ const EnquiryPopup = ({trigger}: {trigger:ReactNode}) => {
                             Fill out the form below and I will get back in touch with you as soon as possible.
                         </DialogDescription>
                     </DialogHeader>
-                    <ContactForm setIsOpen={setIsOpen} />
+                    <ScrollArea className="max-h-[50vh] overflow-y-auto">
+                        <div>
+                            <ContactForm setIsOpen={setIsOpen} />
+                        </div>
+                    </ScrollArea>
                 </DialogContent>
             </Dialog>
         </div>

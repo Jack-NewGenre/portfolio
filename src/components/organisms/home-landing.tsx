@@ -2,7 +2,7 @@ import ImageTrail from "@/components/molecules/ImageTrail";
 
 const LandingSectionNew = () => {
     return ( 
-        <div className="relative h-screen flex justify-center items-center bg-background">
+        <div className="relative h-screen flex justify-center items-center bg-background overflow-hidden">
             <div className="absolute inset-0 z-1">
                 <ImageTrail
                     items={[
@@ -18,9 +18,9 @@ const LandingSectionNew = () => {
                     variant={1}
                 />
             </div>
-            <div className="text-foreground text-center cursor-default z-2 pointer-events-none flex flex-col gap-2">
+            <div className="text-foreground text-center cursor-default z-2 pointer-events-none flex flex-col gap-2 px-4">
                 <h1 className="text-[12vw] leading-none uppercase font-medium">Jack Cox</h1>
-                <p className="text-1xl font-mono">Full-Stack Developer based in London, UK</p>
+                <p className="text-sm font-mono sm:text-base">Full-Stack Developer based in London, UK</p>
             </div>
         </div>
      );

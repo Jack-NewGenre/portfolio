@@ -6,14 +6,15 @@ import type {
 } from "@notionhq/client/build/src/api-endpoints";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { ArrowRight } from "lucide-react";
 
 const BlogPage = async () => {
   const posts: QueryDatabaseResponse = await fetchPages();
 
   return (
-    <div className="pt-40 px-4 pb-16 bg-background w-full mx-auto">
+    <div className="pt-40 px-4 md:px-8 pb-16 bg-background w-full mx-auto">
       <div className="w-full max-w-4xl mx-auto">
-        <h1 className="text-9xl uppercase mb-10">Journal</h1>
+        <h1 className="text-6xl uppercase mb-10 md:text-9xl">Journal</h1>
         <ul className="flex flex-col">
           {posts.results
             .filter(
@@ -72,15 +73,15 @@ const BlogPage = async () => {
               console.log(post.properties);
 
               return (
-                <li key={post.id} className="flex items-center justify-between pb-8 mb-8 border-b border-foreground/10 w-full">
+                <li key={post.id} className="flex flex-col items-center justify-between pb-8 mb-8 border-b border-foreground/10 w-full md:flex-row">
                   <Link
                     href={`/blog/${slug}`}
-                    className="text-base w-full flex justify-between"
+                    className="text-base w-full flex flex-col justify-between md:flex-row"
                   >
                     {thumbnail && (
-                      <Image src={thumbnail} alt={`${title} thumbnail`} width={300} height={300} className="w-1/3 h-auto object-cover" />
+                      <Image src={thumbnail} alt={`${title} thumbnail`} width={300} height={300} className="w-full h-auto object-cover md:w-1/3" />
                     )}
-                    <div className="flex flex-col gap-2 w-2/3 py-4 px-8">
+                    <div className="flex flex-col gap-2 w-full py-4 px-0 md:px-8 md:w-2/3">
                       {tags.length > 0 && (
                         <div className="flex flex-wrap gap-2 mt-2">
                           {tags.map((tag) => (
@@ -96,7 +97,7 @@ const BlogPage = async () => {
                       <h2 className="text-2xl">{title}</h2>
                       <p className="text-sm opacity-70">{description}</p>
                       <p>{formattedDate}</p>
-                      <Button className="mt-2 w-max" variant="outline">Read Article</Button>
+                      <Button className="mt-2 w-max group" variant="default">Read Article <ArrowRight className="rotate-0 group-hover:-rotate-45 transition-all duration-300" /></Button>
                     </div>
                   </Link>
                 </li>
