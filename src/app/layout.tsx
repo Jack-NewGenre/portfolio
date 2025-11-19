@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "../components/organisms/Header";
 import { ThemeProvider } from "../components/molecules/ThemeProvider";
 import Footer from "../components/organisms/Footer";
+import { Toaster } from "sonner";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -36,6 +37,7 @@ export default function RootLayout({
           <Header />
           <main>
             {children}
+            <Toaster position="bottom-right" richColors />
           </main>
           <Footer />
         </ThemeProvider>
