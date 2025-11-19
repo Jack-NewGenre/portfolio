@@ -76,7 +76,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image, date, service })
             style={{ backgroundImage: `url(${image})` }}
             />
             <div className='flex items-center'>
-                <span className="text-sm text-background font-mono text-right md:text-base">{service}</span>
+                <span className="text-sm text-background font-mono text-right hidden sm:block md:text-base">{service}</span>
             </div>
         </div>
         
@@ -97,7 +97,7 @@ const MenuItem: React.FC<MenuItemProps> = ({ link, text, image, date, service })
             <h4 className='text-xl uppercase sm:text-4xl md:text-6xl'>{text}</h4>
         </div>
         <div className='flex items-center'>
-            <span className="text-sm font-mono text-right md:text-base">{service}</span>
+            <span className="text-sm font-mono text-right hidden sm:block md:text-base">{service}</span>
         </div>
       </a>
       <div
