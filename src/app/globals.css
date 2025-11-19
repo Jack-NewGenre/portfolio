@@ -136,6 +136,11 @@
 
 @tailwind utilities;
 
+[data-scroll-locked][data-scroll-locked] {
+  margin: 0 !important;
+  overflow: visible !important;
+}
+
 ::selection {
 	background: var(--core);
   color: var(--background);
