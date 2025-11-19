@@ -1,3 +1,5 @@
+"use client"
+
 import {
   Dialog,
   DialogContent,
@@ -7,12 +9,14 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog"
 import ContactForm from "@/components/atoms/ContactForm";
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 
 const EnquiryPopup = ({trigger}: {trigger:ReactNode}) => {
+    const [isOpen, setIsOpen] = useState<boolean>(false);
+
     return ( 
         <div>
-            <Dialog >
+            <Dialog open={isOpen} onOpenChange={setIsOpen}>
                 <DialogTrigger asChild>
                     {trigger}
                 </DialogTrigger>
@@ -23,7 +27,7 @@ const EnquiryPopup = ({trigger}: {trigger:ReactNode}) => {
                             Fill out the form below and I will get back in touch with you as soon as possible.
                         </DialogDescription>
                     </DialogHeader>
-                    <ContactForm />
+                    <ContactForm setIsOpen={setIsOpen} />
                 </DialogContent>
             </Dialog>
         </div>
